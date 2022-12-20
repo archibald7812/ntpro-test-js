@@ -1,0 +1,18 @@
+.root {
+	display: flex;
+	justify-content: space-between;
+	font-size: 30px;
+	width: 70%;
+}
+
+.price {
+	text-align: center;
+}
+
+.buy {
+	color: green;
+}
+
+.sell {
+	color: red;
+}
