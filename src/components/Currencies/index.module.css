@@ -9,4 +9,13 @@
 .select {
 	font-size: 30px;
 	margin-bottom: 30px;
+	background-color: wheat;
+	border-radius: 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+.option {
+	font-size: 20px;
+	text-align: center;
 }

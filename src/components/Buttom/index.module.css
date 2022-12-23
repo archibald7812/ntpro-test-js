@@ -1,0 +1,12 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	min-height: 30px;
+	border-top: 5px solid wheat;
+}
+
+.title {
+	color: wheat;
+}

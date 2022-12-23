@@ -2,8 +2,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	min-height: 50px;
+	border-bottom: 5px solid wheat;
 }
 
 .link {
-	padding: 5px;
+	padding: 5px 20px;
+	text-decoration: none;
+	color: wheat;
+	font-weight: bold;
 }

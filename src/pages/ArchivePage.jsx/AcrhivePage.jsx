@@ -1,12 +1,11 @@
+import { Table } from "../../components/Table/Table"
 import classnames from "classnames"
 import styles from './index.module.css'
 
-export const Bottom = () => {
+export const ArchivePage = () => {
 	return (
 		<div className={classnames(styles.root)}>
-			<h4 className={classnames(styles.title)}>
-				Vladislav Rozov
-			</h4>
+			<Table />
 		</div>
 	)
 }
