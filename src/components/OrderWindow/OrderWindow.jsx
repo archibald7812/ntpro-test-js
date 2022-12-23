@@ -10,7 +10,7 @@ export const OrderWindow = ({ active, closeOrderWindow, currency, orderType, pri
 
 	const [actualPrice, setActualPrice] = useState(price)
 	const [volume, setVolume] = useState('')
-	const [disabled, setDisabled] = useState(false)
+	const [disabled, setDisabled] = useState(true)
 
 	useEffect(() => {
 		setActualPrice(price)
@@ -44,7 +44,7 @@ export const OrderWindow = ({ active, closeOrderWindow, currency, orderType, pri
 	const onChange = (event) => {
 		event.preventDefault()
 		setVolume(event.target.value)
-		if (Number(event.target.value)) setDisabled(false)
+		if (Number(event.target.value) && event.target.value.length) setDisabled(false)
 		else setDisabled(true)
 	}
 
@@ -57,20 +57,22 @@ export const OrderWindow = ({ active, closeOrderWindow, currency, orderType, pri
 						className={classnames(orderType === 'BUY' ? styles.buy : styles.sell)}
 					>{orderType}</span><span>{currency[0]} {actualPrice}</span>
 				</div>
-				<div className={classnames(styles.section)}>
+				<div className={classnames(styles.section, styles.volume)}>
 					<span>Volume</span>
 					<input type='text' value={volume} onChange={(e) => onChange(e)}></input>
 				</div>
-				<div className={classnames(styles.section)}>
+				<div className={classnames(styles.section, styles.buttons)}>
 					<button onClick={() => {
 						setVolume('')
 						closeOrderWindow()
-					}}>Cancel</button>
+					}}
+						className={classnames(styles.button)}>Cancel</button>
 					<button onClick={(e) => {
 						onSave(e)
 						closeOrderWindow()
 					}
-					} disabled={disabled}>OK</button>
+					} disabled={disabled}
+						className={classnames(styles.button)}>OK</button>
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 .root {
 	display: flex;
 	justify-content: center;
-	padding-top: 30px;
+	font-size: 20px;
 }
 
 .titleColumn {
@@ -15,7 +15,8 @@
 }
 
 .table {
-	border: 1px solid grey;
+	border: 1px solid black;
+	background-color: wheat;
 	border-radius: 10px;
 }
 
@@ -31,4 +32,16 @@
 
 .sell {
 	color: red;
+}
+
+@media (max-width: 650px) {
+	.root {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 380px) {
+	.root {
+		font-size: 6px;
+	}
 }
