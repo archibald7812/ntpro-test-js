@@ -4,7 +4,7 @@
 
 HTML, CSS, React, RTK, React router v6
 
-## [https://archibald7812.github.io/ntpro-test-js](Деплой)
+## [Деплой](https://archibald7812.github.io/ntpro-test-js)
 
 ## Для запуска проекта
 
