@@ -16,7 +16,7 @@ function App() {
 
     setInterval(() => {
       dispatch(updateCurrencies())
-    }, 2000)
+    }, 5000)
 
   }, [dispatch])
 
