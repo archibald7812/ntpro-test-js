@@ -20,7 +20,7 @@ export const OrderWindow = ({ active, closeOrderWindow, currency, orderType, pri
 
 	const onSave = (event) => {
 		event.preventDefault()
-
+		if (volume==='') return 
 		dispatch(addOrder({
 			orderType: orderType,
 			price: actualPrice,

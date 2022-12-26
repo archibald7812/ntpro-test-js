@@ -3,13 +3,14 @@ import styles from './index.module.css'
 import { ExchangeRate } from "../ExchangeRate/ExchangeRate"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import { selectCurrenciesList} from "../../store/currencies/selectors"
+import { selectCurrenciesList, selectCurrency} from "../../store/currencies/selectors"
 
 export const Currencies = () => {
 
 	const [currencyIndex, setCurrencyIndex] = useState(0)
 
 	const currenciesList = useSelector(state => selectCurrenciesList(state))
+	const currency = useSelector(state => selectCurrency(state, currencyIndex))
 
 	const changeCurrency = (event) => {
 		currenciesList.map((item,index) => {
@@ -30,7 +31,7 @@ export const Currencies = () => {
 					</option>
 				})}
 			</select>
-			<ExchangeRate currency={currenciesList[currencyIndex]} className={classnames(styles.section)}></ExchangeRate>
+			<ExchangeRate currency={currency} className={classnames(styles.section)}></ExchangeRate>
 		</div>
 
 	)

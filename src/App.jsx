@@ -1,7 +1,6 @@
 import { useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { Header } from "./components/Header/Header";
 import { Layout } from "./components/Layout/Layout";
 import { ArchivePage } from "./pages/ArchivePage.jsx/AcrhivePage";
 import { TraidingPage } from "./pages/TraidingPage/TraidingPage";
