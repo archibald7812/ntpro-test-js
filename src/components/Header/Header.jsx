@@ -1,5 +1,5 @@
 import classnames from "classnames"
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 import styles from './index.module.css'
 
 export const Header = () => {

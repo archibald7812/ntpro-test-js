@@ -23,11 +23,11 @@ export const currenciesSlice = createSlice({
 	initialState: initialState,
 	reducers: {
 		updateCurrencies: (state, action) => {
-			const result = {}
+			const result = {...emtyState}
 			for (const currency of Object.keys(initialState.currencies)) {
-				state.currencies[currency] = (Math.random() * 10).toFixed(3)
+				result.currencies[currency] = (Math.random() * 10).toFixed(3)
 			}
-			//state.currencies = { ...result }
+			state.currencies = {...result.currencies}
 		}
 	}
 })

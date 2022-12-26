@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-export const Clock = ({ className }) => {
 
+export const Clock =({ className }) => {
 
 	const [time, setTime] = useState(new Date())
 

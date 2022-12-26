@@ -1,26 +1,21 @@
 import classnames from "classnames"
 import styles from './index.module.css'
 import { ExchangeRate } from "../ExchangeRate/ExchangeRate"
-import { useLayoutEffect, useState } from "react"
+import { useState } from "react"
 import { useSelector } from "react-redux"
-import { selectAllCurrencies } from "../../store/currencies/selectors"
+import { selectCurrenciesList} from "../../store/currencies/selectors"
 
 export const Currencies = () => {
 
-	const initialExchangeRates = useSelector(state => selectAllCurrencies(state))
+	const [currencyIndex, setCurrencyIndex] = useState(0)
 
-	const [exchangeRates, setExchangeRates] = useState(initialExchangeRates)
-	const [currenciesList, setCurrenciesList] = useState(Object.entries(exchangeRates))
-	const [currency, setCurrency] = useState(currenciesList[0])
-
-	useLayoutEffect(() => {
-		setExchangeRates(initialExchangeRates)
-		setCurrenciesList(Object.entries(exchangeRates))
-		setCurrency(currenciesList.find(item => item[0] === currency[0]))
-	}, [initialExchangeRates])
+	const currenciesList = useSelector(state => selectCurrenciesList(state))
 
 	const changeCurrency = (event) => {
-		setCurrency(currenciesList.find(item => item[0] === event.target.value))
+		currenciesList.map((item,index) => {
+			if (item[0] === event.target.value) setCurrencyIndex(index)
+			return item
+		})
 	}
 
 	return (
@@ -35,7 +30,7 @@ export const Currencies = () => {
 					</option>
 				})}
 			</select>
-			<ExchangeRate currency={currency} className={classnames(styles.section)}></ExchangeRate>
+			<ExchangeRate currency={currenciesList[currencyIndex]} className={classnames(styles.section)}></ExchangeRate>
 		</div>
 
 	)

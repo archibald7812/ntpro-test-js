@@ -1,2 +1,2 @@
-export const selectAllCurrencies = state => state.currencies.currencies
+export const selectCurrenciesList = state => Object.entries(state.currencies.currencies)
 

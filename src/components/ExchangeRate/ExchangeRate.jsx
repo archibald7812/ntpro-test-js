@@ -15,7 +15,7 @@ export const ExchangeRate = ({ currency, className }) => {
 	}, [currency])
 
 	const calculatePrice = (price, factor) => {
-		return (price * factor).toFixed(2)
+		return (price * factor).toFixed(3)
 	}
 
 	const openOrderWindow = (event) => {
